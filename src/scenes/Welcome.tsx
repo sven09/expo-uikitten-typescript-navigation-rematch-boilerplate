@@ -5,13 +5,16 @@ import {
   LayoutElement,
   Text,
 } from 'react-native-ui-kitten';
+import { InnerLayout } from '../Layout/InnerLayout';
 
 export const WelcomeScreen = (props): LayoutElement => (
-  <Layout style={styles.container}>
-    <Text style={styles.text} category='h1'>
-      Welcome to React Navigation 5 Guide
+  <InnerLayout>
+    <Layout style={styles.container}>
+      <Text style={styles.text} category='h1'>
+      Expo UIKitten Typescript ReactNavigation Rematch Responsive Boilerplate
     </Text>
-  </Layout>
+    </Layout>
+  </InnerLayout>
 );
 
 const styles = StyleSheet.create({

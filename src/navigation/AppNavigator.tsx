@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { WelcomeScreen } from '../scenes/welcome.component';
+import { WelcomeScreen } from '../scenes/Welcome';
 import { AppRoute } from './app-routes';
 
 const Stack = createStackNavigator();
