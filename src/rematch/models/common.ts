@@ -1,6 +1,7 @@
-import { IRootState, Dispatch } from '../store';
+
 import { dark, light } from '@eva-design/eva';
-import { THEMES } from '../../components/ThemeSwitcher/ThemeSwitcher';
+import { THEMES } from '../../api/common';
+
 
 const defaultTheme = dark;
 

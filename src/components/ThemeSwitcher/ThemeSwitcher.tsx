@@ -5,6 +5,7 @@ import React from 'react';
 import { ButtonGroup, Button, Icon } from 'react-native-ui-kitten';
 import { StyleSheet } from 'react-native';
 import { useRematchDispatch, Dispatch } from '../../rematch/store';
+import { THEMES } from '../../api/common';
 
 // =============================================================
 // Components
@@ -13,11 +14,7 @@ import { useRematchDispatch, Dispatch } from '../../rematch/store';
 // =============================================================
 // Function
 // =============================================================
-export enum THEMES {
-	light = 'light',
-	dark = 'dark',
-	custom = 'custom'
-}
+
 
 export interface ITheme {
 	themeUid: THEMES,
