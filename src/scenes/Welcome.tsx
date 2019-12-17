@@ -1,21 +1,30 @@
-import React from 'react';
+import React, { Dispatch } from 'react';
 import { StyleSheet } from 'react-native';
-import {
-  Layout,
-  LayoutElement,
-  Text,
-} from 'react-native-ui-kitten';
+import { Button, Layout, LayoutElement, Text } from 'react-native-ui-kitten';
 import { InnerLayout } from '../Layout/InnerLayout';
+import { useRematchDispatch } from '../rematch/store';
 
-export const WelcomeScreen = (props): LayoutElement => (
-  <InnerLayout>
-    <Layout style={styles.container}>
-      <Text style={styles.text} category='h1'>
-      Expo UIKitten Typescript ReactNavigation Rematch Responsive Boilerplate
+export const WelcomeScreen = (props): LayoutElement => {
+
+
+  const { logoutAsync } = useRematchDispatch((dispatch: Dispatch) => ({
+    logoutAsync: dispatch.auth.logoutAsync
+  }));
+
+  return (
+    <InnerLayout>
+      <Layout style={styles.container}>
+        <Text style={styles.text} category='h1'>
+          Expo UIKitten Typescript ReactNavigation Rematch Responsive Boilerplate
     </Text>
-    </Layout>
-  </InnerLayout>
-);
+        <Button
+          onPress={() => logoutAsync()}>
+          Logout
+      </Button>
+      </Layout>
+    </InnerLayout>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {

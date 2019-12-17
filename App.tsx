@@ -1,37 +1,59 @@
+// =============================================================
+// React, React Native, Expo, etc.
+// =============================================================
 import React from 'react';
-import { YellowBox } from 'react-native';
+import { Provider, useSelector } from 'react-redux';
+
 import { NavigationNativeContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import {
-  light,
-  mapping,
-} from '@eva-design/eva';
-import {
-  ApplicationProvider,
-  IconRegistry,
-} from 'react-native-ui-kitten';
+
+import { light, mapping } from '@eva-design/eva';
+import { ApplicationProvider, IconRegistry } from 'react-native-ui-kitten';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
+
+// =============================================================
+// Components
+// =============================================================
 import { AppNavigator } from './src/navigation/AppNavigator';
 import { AppRoute } from './src/navigation/app-routes';
 
-export default (): React.ReactFragment => {
+import { store, IRootState } from './src/rematch/store';
 
-  // This value is used to determine the initial screen
-  const isAuthorized: boolean = true;
+// =============================================================
+// Component, Function
+// =============================================================
+
+const Inner = () => {
+
+  const { activeTheme } = useSelector((state: IRootState) => {
+    return {
+      activeTheme: state.common.activeTheme
+    };
+  });
 
   return (
-    <React.Fragment>
-      <IconRegistry icons={EvaIconsPack}/>
+    <>
+      <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider
         mapping={mapping}
-        theme={light}>
+        theme={activeTheme}>
         <SafeAreaProvider>
           <NavigationNativeContainer>
-            <AppNavigator initialRouteName={isAuthorized ? AppRoute.HOME : AppRoute.AUTH}/>
+            <AppNavigator />
           </NavigationNativeContainer>
         </SafeAreaProvider>
       </ApplicationProvider>
-    </React.Fragment>
+    </>
+  )
+
+}
+export default (): React.ReactFragment => {
+
+
+  return (
+    <Provider store={store}>
+      <Inner />
+    </Provider>
   );
 };
 

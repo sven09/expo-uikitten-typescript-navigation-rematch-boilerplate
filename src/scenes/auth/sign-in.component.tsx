@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Dispatch } from 'react';
 import {
   ImageBackground,
   StyleSheet,
@@ -25,14 +25,21 @@ import {
   SignInData,
   SignInSchema,
 } from '../../data/sign-in.model';
+import { useRematchDispatch } from '../../rematch/store';
+import { InnerLayout } from '../../Layout/InnerLayout';
 
 export const SignInScreen = (props: SignInScreenProps): LayoutElement => {
 
   const [shouldRemember, setShouldRemember] = React.useState<boolean>(false);
   const [passwordVisible, setPasswordVisible] = React.useState<boolean>(false);
 
+  const { loginAsync } = useRematchDispatch((dispatch: Dispatch) => ({    
+    loginAsync: dispatch.auth.loginAsync
+  }));
+
+
   const onFormSubmit = (values: SignInData): void => {
-    navigateHome();
+    loginAsync ("any")
   };
 
   const navigateHome = (): void => {
@@ -40,7 +47,9 @@ export const SignInScreen = (props: SignInScreenProps): LayoutElement => {
   };
 
   const navigateSignUp = (): void => {
-    props.navigation.navigate(AppRoute.SIGN_UP);
+  
+    loginAsync ("any")
+    // props.navigation.navigate(AppRoute.SIGN_UP);
   };
 
   const navigateResetPassword = (): void => {
@@ -90,10 +99,10 @@ export const SignInScreen = (props: SignInScreenProps): LayoutElement => {
   );
 
   return (
-    <React.Fragment>
+    <InnerLayout>
       <ImageBackground
         style={styles.appBar}
-        source={require('../../assets/image-background.jpeg')}
+        source={require('../../../assets/background.jpg')}
       />
       <Layout style={styles.formContainer}>
         <Formik
@@ -110,7 +119,7 @@ export const SignInScreen = (props: SignInScreenProps): LayoutElement => {
           Don't have an account?
         </Button>
       </Layout>
-    </React.Fragment>
+    </InnerLayout>
   );
 };
 

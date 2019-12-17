@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Dispatch } from 'react';
 import {
   ImageBackground,
   StyleSheet,
@@ -24,6 +24,7 @@ import {
   SignUpData,
   SignUpSchema,
 } from '../../data/sign-up.model';
+import { useRematchDispatch } from '../../rematch/store';
 
 export const SignUpScreen = (props: SignUpScreenProps): LayoutElement => {
 
@@ -38,7 +39,11 @@ export const SignUpScreen = (props: SignUpScreenProps): LayoutElement => {
   };
 
   const navigateSignIn = (): void => {
-    props.navigation.navigate(AppRoute.SIGN_IN);
+    const { loginAsync } = useRematchDispatch((dispatch: Dispatch) => ({
+      loginAsync: dispatch.auth.loginAsync
+    }));
+    loginAsync ("any")
+    // props.navigation.navigate(AppRoute.SIGN_IN);
   };
 
   const renderForm = (props: FormikProps<SignUpData>): React.ReactFragment => (
@@ -71,7 +76,7 @@ export const SignUpScreen = (props: SignUpScreenProps): LayoutElement => {
     <React.Fragment>
       <ImageBackground
         style={[styles.appBar, { paddingTop: insets.top }]}
-        source={require('../../assets/image-background.jpeg')}>
+        source={require('../../../assets/background.jpg')}>
         <Toolbar
           appearance='control'
           onBackPress={props.navigation.goBack}
