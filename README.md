@@ -1,9 +1,8 @@
 # Expo UIKitten Typescript ReactNavigation Rematch Responsive Boilerplate 
 
-__Work in progress__
+__Work in progress__: Means, this project is far away from being perfect. However, use it as an inspiration starting point.
 
-This is a proof of concept and boilerplate for using the same code base for 
-Expo Native as well as Expo Web.
+This is a proof of concept and boilerplate for using the same code base for Expo Native as well as Expo Web.
 
 ![Preview](https://github.com/sven09/expo-uikitten-typescript-navigation-rematch-boilerplate/blob/master/docs/images/expo-uikitten-theming.gif?raw=true "Preview for web and ios")
 
