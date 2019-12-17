@@ -1,30 +1,28 @@
-import { IRootState, Dispatch } from '../store';
+import { IRootState } from '../store';
 
 export const auth = {
-
-	state:{
+	state: {
 		isAuthorized: false,
-		user: null
+		user: null,
 	},
 	reducers: {
 		setLoggedIn(state, user) {
 			return {
 				...state,
 				isAuthorized: true,
-				user
+				user,
 			};
 		},
 		setLoggedOut(state) {
 			return {
 				...state,
 				isAuthorized: false,
-				user: null
+				user: null,
 			};
 		},
 	},
 	effects: (dispatch) => ({
 		async loginAsync(payload, state: IRootState) {
-			
 			try {
 				const { user, password } = payload;
 				// fake

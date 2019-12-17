@@ -15,13 +15,11 @@ import { THEMES } from '../../api/common';
 // Function
 // =============================================================
 
-
 export interface ITheme {
-	themeUid: THEMES,
-	icon: string,
-	label: string,
+	themeUid: THEMES;
+	icon: string;
+	label: string;
 }
-
 
 interface ThemeSwitcherProps {
 	themes?: ITheme[];
@@ -45,8 +43,7 @@ export const ThemeSwitcher = (props: ThemeSwitcherProps) => {
 			{_themes.map((theme, key) => {
 				const icon = (style) => <Icon {...style} name={theme.icon} />;
 				return (
-					<Button key={key} testID={`themeSwitcher_${theme.themeUid}`} icon={icon}
-						onPress={() => setTheme(theme.themeUid)}>
+					<Button key={key} testID={`themeSwitcher_${theme.themeUid}`} icon={icon} onPress={() => setTheme(theme.themeUid)}>
 						{theme.label}
 					</Button>
 				);

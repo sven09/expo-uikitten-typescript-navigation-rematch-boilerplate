@@ -5,7 +5,6 @@ import React, { ReactNode } from 'react';
 import { Layout } from 'react-native-ui-kitten';
 import { useMediaQuery } from 'react-responsive';
 
-
 import { ScrollView } from 'react-native-gesture-handler';
 import { ThemeSwitcher } from '../components/ThemeSwitcher/ThemeSwitcher';
 
@@ -34,24 +33,21 @@ export const InnerLayout: React.FC<LayoutProps> = (props) => {
 		query: '(min-device-width: 1224px)',
 	});
 
-
 	return (
-
-			<Layout style={{ flex: 1 }}>
-				<ScrollView>
-					<Layout
-						style={{
-							width: isDesktopOrLaptop ? 800 : null,
-							alignSelf: isDesktopOrLaptop ? 'center' : null,
-							paddingHorizontal: isDesktopOrLaptop ? 10 : null,
-							marginTop: 20,
-						}}
-					>
-						{props.children}
-						<ThemeSwitcher />
-					</Layout>
-				</ScrollView>
-			</Layout>
-		
+		<Layout style={{ flex: 1 }}>
+			<ScrollView>
+				<Layout
+					style={{
+						width: isDesktopOrLaptop ? 800 : null,
+						alignSelf: isDesktopOrLaptop ? 'center' : null,
+						paddingHorizontal: isDesktopOrLaptop ? 10 : null,
+						marginTop: 20,
+					}}
+				>
+					{props.children}
+					<ThemeSwitcher />
+				</Layout>
+			</ScrollView>
+		</Layout>
 	);
 };
