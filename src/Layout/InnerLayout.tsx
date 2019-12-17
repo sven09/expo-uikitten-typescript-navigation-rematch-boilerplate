@@ -7,6 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 
 
 import { ScrollView } from 'react-native-gesture-handler';
+import { ThemeSwitcher } from '../components/ThemeSwitcher/ThemeSwitcher';
 
 // =============================================================
 // Constants & Interfaces
@@ -47,6 +48,7 @@ export const InnerLayout: React.FC<LayoutProps> = (props) => {
 						}}
 					>
 						{props.children}
+						<ThemeSwitcher />
 					</Layout>
 				</ScrollView>
 			</Layout>

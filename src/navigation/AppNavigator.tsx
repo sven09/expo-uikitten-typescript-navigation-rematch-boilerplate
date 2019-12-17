@@ -6,6 +6,8 @@ import { useSelector } from 'react-redux';
 import { IRootState } from '../rematch/store';
 import { SignUpScreen, SignInScreen } from '../scenes/auth';
 
+import { getThemeValue } from '../../node_modules/react-native-ui-kitten/theme/theme/theme.service'
+
 const Stack = createStackNavigator();
 
 export const AppNavigator = (props): React.ReactElement => {
@@ -14,19 +16,20 @@ export const AppNavigator = (props): React.ReactElement => {
     return {
       isAuthorized: state.auth.isAuthorized,
       activeTheme: state.common.activeTheme
-      
+
     };
   });
- 
+
   return (
 
     <Stack.Navigator {...props}
       screenOptions={{
         headerStyle: {
-          backgroundColor: activeTheme["background-basic-color-1"],
+          // backgroundColor: getThemeValue("background-alternative-color-1", activeTheme)
+          backgroundColor: getThemeValue("background-basic-color-1", activeTheme)
         },
-        headerTitleStyle: { color: activeTheme["text-basic-color"] },
-        headerTintColor: activeTheme["text-basic-color"],
+        headerTitleStyle: { color: getThemeValue("text-primary-color", activeTheme) },
+        headerTintColor: getThemeValue("text-primary-color", activeTheme),
       }}
     >
       {isAuthorized ?

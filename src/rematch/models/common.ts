@@ -1,9 +1,11 @@
 import { IRootState, Dispatch } from '../store';
 import { dark, light } from '@eva-design/eva';
+import { THEMES } from '../../components/ThemeSwitcher/ThemeSwitcher';
 
 const defaultTheme = dark;
 
-const customTheme = { // see eva design for generating custom themes
+const customTheme = {
+  // see eva design for generating custom themes
   ...light,
 
   'color-primary-100': '#E1FBCD',
@@ -14,15 +16,8 @@ const customTheme = { // see eva design for generating custom themes
   'color-primary-600': '#10A50A',
   'color-primary-700': '#078A0D',
   'color-primary-800': '#046F12',
-  'color-primary-900': '#025C15',
-
+  'color-primary-900': '#025C15'
 };
-
-enum THEMES {
-  light = 'light',
-  dark = 'dark',
-  custom = 'custom'
-}
 
 export const common = {
   state: {
