@@ -18,6 +18,7 @@ To be continued ...
 Just beautiful and cool. For more details see https://github.com/artyorsh/react-navigation-ex-demo and switch to the examples branch
 
 
+
 ## Rematch
 The general decision to use rematch/redux instead of React Context is due to the fact 
 that we are using rematch anyway to fetching data and we don't need two mechanism that 
