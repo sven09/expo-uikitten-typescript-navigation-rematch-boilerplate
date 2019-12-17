@@ -19,14 +19,17 @@ Expo application that demonstrates usage of
 * [Rematch][https://github.com/rematch/rematch]
 
 
+### Todo
+* Tab Navigator on welcome screen with some tabs
+* Drawer Navigator
+* i18n
+
+
 ### Done 
 * Router depending on login state from rematch (formerly known as switch router)
 * Responsive Layout
 
-## Todo
-* Tab Navigator on welcome screen with some tabs
-* Drawer Navigator
-* i18n
+
 
 
 
