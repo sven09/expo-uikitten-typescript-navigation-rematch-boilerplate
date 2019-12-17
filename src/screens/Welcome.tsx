@@ -19,7 +19,7 @@ export const WelcomeScreen = (props): LayoutElement => {
     </Text>
         <Button
           onPress={() => logoutAsync()}>
-          Logout
+          Sign Out
       </Button>
       </Layout>
     </InnerLayout>

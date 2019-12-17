@@ -14,8 +14,6 @@ import {
   Formik,
   FormikProps,
 } from 'formik';
-import { SignInScreenProps } from '../../navigation/auth.navigator';
-import { AppRoute } from '../../navigation/app-routes';
 import { FormInput } from '../../components/Forminput';
 import {
   EyeIcon,
@@ -27,8 +25,9 @@ import {
 } from '../../data/sign-in.model';
 import { useRematchDispatch } from '../../rematch/store';
 import { InnerLayout } from '../../Layout/InnerLayout';
+import { AppRoute } from '../../navigation/AppNavigator';
 
-export const SignInScreen = (props: SignInScreenProps): LayoutElement => {
+export const SignInScreen = (props): LayoutElement => {
 
   const [shouldRemember, setShouldRemember] = React.useState<boolean>(false);
   const [passwordVisible, setPasswordVisible] = React.useState<boolean>(false);
@@ -43,7 +42,7 @@ export const SignInScreen = (props: SignInScreenProps): LayoutElement => {
   };
 
   const navigateHome = (): void => {
-    props.navigation.navigate(AppRoute.HOME);
+    props.navigation.navigate(AppRoute.AUTH);
   };
 
   const navigateSignUp = (): void => {
@@ -52,9 +51,6 @@ export const SignInScreen = (props: SignInScreenProps): LayoutElement => {
     // props.navigation.navigate(AppRoute.SIGN_UP);
   };
 
-  const navigateResetPassword = (): void => {
-    props.navigation.navigate(AppRoute.RESET_PASSWORD);
-  };
 
   const onPasswordIconPress = (): void => {
     setPasswordVisible(!passwordVisible);
@@ -86,7 +82,7 @@ export const SignInScreen = (props: SignInScreenProps): LayoutElement => {
         <Button
           appearance='ghost'
           status='basic'
-          onPress={navigateResetPassword}>
+          onPress={() => {}}>
           Forgot password?
         </Button>
       </View>

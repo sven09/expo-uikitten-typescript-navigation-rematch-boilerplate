@@ -1,12 +1,17 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { WelcomeScreen } from '../scenes/Welcome';
-import { AppRoute } from './app-routes';
+import { WelcomeScreen } from '../screens/Welcome';
 import { useSelector } from 'react-redux';
 import { IRootState } from '../rematch/store';
-import { SignUpScreen, SignInScreen } from '../scenes/auth';
+import { SignInScreen } from '../screens/auth';
 
 import { getThemeValue } from '../../node_modules/react-native-ui-kitten/theme/theme/theme.service'
+
+
+export enum AppRoute {
+  AUTH = 'Auth',
+  SIGN_IN = 'Sign In',
+}
 
 const Stack = createStackNavigator();
 

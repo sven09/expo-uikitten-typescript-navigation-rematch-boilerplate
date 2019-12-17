@@ -5,7 +5,7 @@ import React from 'react';
 import { Provider, useSelector } from 'react-redux';
 
 import { NavigationNativeContainer } from '@react-navigation/native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native';
 
 import { light, mapping } from '@eva-design/eva';
 import { ApplicationProvider, IconRegistry } from 'react-native-ui-kitten';
@@ -15,7 +15,6 @@ import { EvaIconsPack } from '@ui-kitten/eva-icons';
 // Components
 // =============================================================
 import { AppNavigator } from './src/navigation/AppNavigator';
-import { AppRoute } from './src/navigation/app-routes';
 
 import { store, IRootState } from './src/rematch/store';
 
@@ -37,11 +36,11 @@ const Inner = () => {
       <ApplicationProvider
         mapping={mapping}
         theme={activeTheme}>
-        <SafeAreaProvider>
+        <SafeAreaView style={{flex:1}}>
           <NavigationNativeContainer>
             <AppNavigator />
           </NavigationNativeContainer>
-        </SafeAreaProvider>
+        </SafeAreaView>
       </ApplicationProvider>
     </>
   )
