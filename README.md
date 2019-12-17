@@ -8,7 +8,6 @@ The intention is to show how the components work together. For full details plea
 ![Preview](https://github.com/sven09/expo-uikitten-typescript-navigation-rematch-boilerplate/blob/master/docs/images/expo-uikitten-theming.gif?raw=true "Preview for web and ios")
 
 
-
 ## Expo & React Navigation
 We wanted to see, how we can handle a common codebase for App & Web and see how we are handling navigation and deeplinking as well as routes.
 We would also like to see, how React Navigation 5.x is working. 
@@ -16,7 +15,6 @@ To be continued ...
 
 ## UI Kitten
 Just beautiful and cool. For more details see https://github.com/artyorsh/react-navigation-ex-demo and switch to the examples branch
-
 
 
 ## Rematch
@@ -35,9 +33,11 @@ Expo application that demonstrates usage of
 * Expo https://github.com/expo/expo 
 * React Navigation 5 https://github.com/react-navigation/navigation-ex 
 * UI Kitten https://github.com/akveo/react-native-ui-kitten 
+* Formik https://github.com/jaredpalmer/formik
 * Rematch https://github.com/rematch/rematch
 * Typescript 3.7 https://www.typescriptlang.org/docs/handbook/release-notes/tyescript-3-7.html
 * react-responsive https://github.com/contra/react-responsive
+
 
 # Todos
 
