@@ -5,7 +5,7 @@ import { InnerLayout } from '../Layout/InnerLayout';
 import { useRematchDispatch } from '../rematch/store';
 import { useTranslation } from 'react-i18next';
 
-export const WelcomeScreen = (): LayoutElement => {
+export const SplashScreen = (): LayoutElement => {
 	const { t } = useTranslation();
 
 	const { logoutAsync } = useRematchDispatch((dispatch: Dispatch) => ({

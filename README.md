@@ -11,6 +11,7 @@ The intention is to show how the components work together. For full details plea
 ## Expo & React Navigation
 We wanted to see, how we can handle a common codebase for App & Web and see how we are handling navigation and deeplinking as well as routes.
 We would also like to see, how React Navigation 5.x is working. 
+Tab navigation shows tabbar on web on the top and on iOS and Android on the bottom.
 To be continued ...
 
 ## UI Kitten
@@ -43,7 +44,6 @@ Expo application that demonstrates usage of
 
 ## Open
 * Deep Linking for Browser and App
-* Tab Navigator on Welcome screen with some tabs
 * Drawer Navigator
 
 
@@ -51,6 +51,8 @@ Expo application that demonstrates usage of
 * Router depending on login state from rematch (formerly known as switch router)
 * Responsive Layout for expo web
 * Translation via i18n and Expo Localization
+* Tab Navigator on Welcome screen with some tabs
+
 
 ## Usage
 

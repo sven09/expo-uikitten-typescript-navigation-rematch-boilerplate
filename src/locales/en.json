@@ -1,11 +1,14 @@
 {
-	"translation": {
-		"Welcome": "Welcome",
-		"Forgot password?": "Forgot password?",
-		"Password": "Password",
-		"Email": "Email",
-		"Remember Me": "Remember Me",
-		"Sign in": "Sign in",
-		"Don&apos;t have an account?": "Don&apos;t have an account?"
-	}
+  "translation": {
+    "Welcome": "Welcome",
+    "Forgot password?": "Forgot password?",
+    "Password": "Password",
+    "Email": "Email",
+    "Remember Me": "Remember Me",
+    "Sign in": "Sign in",
+    "Don&apos;t have an account?": "Don&apos;t have an account?",
+    "News": "News",
+    "Schedule": "Schedule",
+    "People": "People"
+  }
 }

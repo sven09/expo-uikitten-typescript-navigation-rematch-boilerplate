@@ -1,18 +1,24 @@
+// =============================================================
+// React, React Native, Expo, etc.
+// =============================================================
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { WelcomeScreen } from '../screens/Welcome';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useSelector } from 'react-redux';
+import { getThemeValue } from '../../node_modules/react-native-ui-kitten/theme/theme/theme.service';
+
+import { SplashScreen } from '../screens/SplashScreen';
 import { IRootState } from '../rematch/store';
 import { SignInScreen } from '../screens/auth';
 
-import { getThemeValue } from '../../node_modules/react-native-ui-kitten/theme/theme/theme.service';
+import { TabNavigator } from './TabNavigator';
+import { AppRoute } from './AppRoute';
 
-export enum AppRoute {
-	AUTH = 'Auth',
-	SIGN_IN = 'Sign In',
-}
-
+// =============================================================
+// Component, Function
+// =============================================================
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 export const AppNavigator = (props): React.ReactElement => {
 	const { isAuthorized, activeTheme } = useSelector((state: IRootState) => {
@@ -35,7 +41,11 @@ export const AppNavigator = (props): React.ReactElement => {
 			}}
 		>
 			{isAuthorized ? (
-				<Stack.Screen name={AppRoute.AUTH} component={WelcomeScreen} />
+			  <Stack.Screen name={AppRoute.HOME}>
+			  {() => (
+				<TabNavigator />
+			  )}
+			</Stack.Screen>
 			) : (
 				<Stack.Screen name={AppRoute.SIGN_IN} component={SignInScreen} />
 			)}
