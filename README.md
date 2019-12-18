@@ -26,7 +26,7 @@ are delivering the same service.
 This is a no brainer for us. Just saying optional chaining (although it is currently not used in this basic setup)
 
 ## i18n
-To be done
+Using i18n and Expo Localization https://www.i18next.com/ & https://docs.expo.io/versions/latest/sdk/localization/
 
 # References
 Expo application that demonstrates usage of 
@@ -44,13 +44,12 @@ Expo application that demonstrates usage of
 ## Open
 * Tab Navigator on welcome screen with some tabs
 * Drawer Navigator
-* i18n
 
 
 ## Done 
 * Router depending on login state from rematch (formerly known as switch router)
 * Responsive Layout for expo web
-
+* Translation via i18n and Expo Localization
 
 ## Usage
 
