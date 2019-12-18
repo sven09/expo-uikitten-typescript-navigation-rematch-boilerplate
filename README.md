@@ -42,7 +42,8 @@ Expo application that demonstrates usage of
 # Todos
 
 ## Open
-* Tab Navigator on welcome screen with some tabs
+* Deep Linking for Browser and App
+* Tab Navigator on Welcome screen with some tabs
 * Drawer Navigator
 
 
