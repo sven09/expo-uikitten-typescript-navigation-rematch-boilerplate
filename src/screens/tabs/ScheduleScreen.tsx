@@ -3,18 +3,14 @@ import { StyleSheet } from 'react-native';
 import { Button, Layout, LayoutElement, Text } from 'react-native-ui-kitten';
 import { InnerLayout } from '../../Layout/InnerLayout';
 
-
-
 export const ScheduleScreen = (): LayoutElement => {
-	
-
 	return (
 		<InnerLayout>
 			<Layout style={styles.container}>
 				<Text style={styles.text} category="h1">
-				ScheduleScreen
+					ScheduleScreen
 				</Text>
-				
+
 				{/* <Button onPress={() => logoutAsync()}>Sign Out</Button> */}
 			</Layout>
 		</InnerLayout>

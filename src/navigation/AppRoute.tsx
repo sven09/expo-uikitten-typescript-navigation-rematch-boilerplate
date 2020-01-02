@@ -5,5 +5,6 @@ export enum AppRoute {
 	NEWS = 'news',
 	PEOPLE = 'people',
 	SCHEDULE = 'schedule',
-	SCHEDULEDETAILS = 'scheduledetails'
+	SCHEDULEDETAILS = 'scheduledetails',
+	IMPRINT = 'imprint',
 }

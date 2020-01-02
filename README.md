@@ -43,11 +43,12 @@ Expo application that demonstrates usage of
 # Todos
 
 ## Open
-* Deep Linking for Browser and App
+* Deep Linking and set up the state eg. tabbrowser/chat/user123
 * Drawer Navigator
 
 
 ## Done 
+* Deep Linking for Browser and App
 * Router depending on login state from rematch (formerly known as switch router)
 * Responsive Layout for expo web
 * Translation via i18n and Expo Localization
@@ -65,7 +66,27 @@ yarn start
 
 Hit w, i , a for web, ios or android (untested)
 
+## Deep linking
+
+__Work in Progress__
+
+Start it with yarn start
+
+Hit i for iOS 
+```bash
+xcrun simctl openurl booted exp://127.0.0.1:19000/--/imprint
+```
+It will open the deeplink screen imprint
+
+Hit w for web and open url in brwoser
+```bash
+open http://127.0.0.1:19000/imprint
+```
+It will open the deeplink screen imprint (keep in mind trailing / will not work )
+
 # Kudos
 This package is heavily based on:
 
 https://github.com/artyorsh/react-navigation-ex-demo
+
+Many thanks to the Expo Team and Evan, as well as the React Navigation Team. 

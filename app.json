@@ -2,6 +2,7 @@
   "expo": {
     "name": "expo-uikitten-typescript-navigation-rematch-boilerplate",
     "slug": "expo-uikitten-typescript-navigation-rematch-boilerplate",
+    "scheme" : "e66",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [

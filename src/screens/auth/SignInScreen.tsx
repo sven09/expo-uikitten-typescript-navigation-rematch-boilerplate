@@ -1,15 +1,29 @@
+// =============================================================
+// React, React Native, Expo, etc.
+// =============================================================
 import React, { Dispatch } from 'react';
 import { ImageBackground, StyleSheet, View } from 'react-native';
 import { Button, CheckBox, Layout, LayoutElement } from 'react-native-ui-kitten';
 import { Formik, FormikProps } from 'formik';
+
+import { useTranslation } from 'react-i18next';
+import { useNavigation } from '@react-navigation/core';
+// =============================================================
+// Components
+// =============================================================
 import { FormInput } from '../../components/Forminput';
 import { EyeIcon, EyeOffIcon } from '../../assets/icons';
 import { SignInData, SignInSchema } from '../../data/sign-in.model';
 import { useRematchDispatch } from '../../rematch/store';
 import { InnerLayout } from '../../Layout/InnerLayout';
-import { useTranslation } from 'react-i18next';
+import { AppRoute } from '../../navigation/AppRoute';
+
+// =============================================================
+// Component, Function
+// =============================================================
 
 export const SignInScreen = (props): LayoutElement => {
+	const navigation = useNavigation();
 	const { t } = useTranslation();
 
 	const [shouldRemember, setShouldRemember] = React.useState<boolean>(false);
@@ -55,8 +69,12 @@ export const SignInScreen = (props): LayoutElement => {
 					{t('Forgot password?')}
 				</Button>
 			</View>
-			<Button style={styles.submitButton} onPress={props.handleSubmit}>
+			<Button style={styles.submitButton} onPress={() => props.handleSubmit()}>
 				{t('Sign in')}
+			</Button>
+
+			<Button style={styles.submitButton} onPress={() => navigation.navigate(AppRoute.IMPRINT)}>
+				{t('Imprint')}
 			</Button>
 		</React.Fragment>
 	);
