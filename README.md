@@ -78,7 +78,7 @@ xcrun simctl openurl booted exp://127.0.0.1:19000/--/imprint
 ```
 It will open the deeplink screen imprint
 
-Hit w for web and open url in brwoser
+Hit w for web and open url in browser
 ```bash
 open http://localhost:19006/imprint
 ```
