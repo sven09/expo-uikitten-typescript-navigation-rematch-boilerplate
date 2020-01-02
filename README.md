@@ -80,7 +80,7 @@ It will open the deeplink screen imprint
 
 Hit w for web and open url in brwoser
 ```bash
-open http://127.0.0.1:19000/imprint
+open http://localhost:19006/imprint
 ```
 It will open the deeplink screen imprint (keep in mind trailing / will not work )
 

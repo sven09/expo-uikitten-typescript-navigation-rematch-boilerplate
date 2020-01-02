@@ -60,7 +60,7 @@ const Inner = () => {
 		};
 	});
 
-	const prefix = Linking.makeUrl('/'); // exp://10.0.20.133:19006/imprint/
+	const prefix = Linking.makeUrl('/'); // exp://10.0.20.133:19006/imprint/ in expo web
 
 	const prefixes = [prefix].concat(['https://app.myapp.com', 'myapp://', 'http://localhost:19006', 'http://10.0.20.133:19006']);
 
