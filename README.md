@@ -70,6 +70,8 @@ Hit w, i , a for web, ios or android (untested)
 
 __Work in Progress__
 
+See also https://reactnavigation.org/docs/en/next/deep-linking.html#uri-prefix
+
 Start it with yarn start
 
 Hit i for iOS 
