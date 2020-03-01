@@ -5,7 +5,7 @@
 import React from 'react';
 import { Provider, useSelector } from 'react-redux';
 
-import { NavigationNativeContainer } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 
 import { Linking } from 'expo';
 import { useLinking } from '@react-navigation/native';
@@ -102,9 +102,9 @@ const Inner = () => {
 			<IconRegistry icons={EvaIconsPack} />
 			<ApplicationProvider mapping={mapping} theme={activeTheme}>
 				<SafeAreaView style={{ flex: 1 }}>
-					<NavigationNativeContainer initialState={initialState} ref={ref}>
+					<NavigationContainer initialState={initialState} ref={ref}>
 						<AppNavigator />
-					</NavigationNativeContainer>
+					</NavigationContainer>
 				</SafeAreaView>
 			</ApplicationProvider>
 		</>

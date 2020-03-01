@@ -5,7 +5,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useSelector } from 'react-redux';
-import { getThemeValue } from '../../node_modules/react-native-ui-kitten/theme/theme/theme.service';
+import { ThemeService } from '../../node_modules/react-native-ui-kitten/theme/theme/theme.service';
 
 // import { SplashScreen } from '../screens/SplashScreen';
 import { IRootState } from '../rematch/store';
@@ -28,17 +28,20 @@ export const AppNavigator = (props): React.ReactElement => {
 			activeTheme: state.common.activeTheme,
 		};
 	});
-
+	console.log('activeTheme', activeTheme);
+	if (!activeTheme) {
+		return null;
+	}
 	return (
 		<Stack.Navigator
 			{...props}
 			screenOptions={{
 				headerStyle: {
 					// backgroundColor: getThemeValue("background-alternative-color-1", activeTheme)
-					backgroundColor: getThemeValue('background-basic-color-1', activeTheme),
+					backgroundColor: ThemeService.getValue('background-basic-color-1', activeTheme, 'white'),
 				},
-				headerTitleStyle: { color: getThemeValue('text-primary-color', activeTheme) },
-				headerTintColor: getThemeValue('text-primary-color', activeTheme),
+				headerTitleStyle: { color: ThemeService.getValue('text-primary-color', activeTheme, 'blue') },
+				headerTintColor: ThemeService.getValue('text-primary-color', activeTheme, 'blue'),
 			}}
 		>
 			{isAuthorized ? (
